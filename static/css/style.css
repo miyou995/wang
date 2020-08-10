@@ -104,6 +104,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
+
 h3 {
     color: #27282c;
     font-size: 20px; 
@@ -292,6 +293,7 @@ li{
     font-weight: 700;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
+
 }
 .sec-title .title.clr-white{
     color: #ffffff;    
@@ -930,7 +932,9 @@ select:focus {
     display: block;
     z-index: 999;
 }
-.main-header.header-style1{}
+.main-header.header-style1{
+    top: 60px;
+}
 .header-upper-style1{
     position: relative;
     display: block;  
@@ -1031,7 +1035,7 @@ select:focus {
 
 .main-menu .navigation > li > ul {
     position: absolute;
-    margin-left: -80px;
+    margin-left: -180px;
     left: 0px;
     top: 130%;
     /* width: 270px; */
@@ -1394,6 +1398,7 @@ select:focus {
 }
 .header-contact-info li:last-child{
     margin-right: 0;
+    border-right: none;
 }
 .header-contact-info li .single-item{
     position: relative;
@@ -2099,7 +2104,7 @@ select:focus {
     border-radius: 50%;
     text-align: center;
     display: block;
-    padding: 15px 0;
+    padding: 5 5;
     transition: all 300ms ease 100ms;
 }
 
@@ -2121,8 +2126,8 @@ select:focus {
 .single-working-box .text-holder .outer-box {
     position: relative;
     display: block;
-    padding-left: 70px;
-    padding-top: 35px;
+    padding-left: 50px;
+    padding-top: 25px;
     padding-bottom: 32px;
 }
 .single-working-box .text-holder .outer-box .icon{
@@ -6885,27 +6890,34 @@ box-shadow: 0px -4px 10px 3px #e8e8e8;
     Breadcrumb area style
 =============================================
 ***/
+
 .breadcrumb-area {
+background-image: url('/static/images/slides/index-banner.jpg');
     position: relative;
     background-attachment: scroll;
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0px 0 0px;
-    z-index: 10;
+    z-index: 1;
 }
+
 .breadcrumb-area .inner-content {
     position: relative;
     display: block;
     padding: 360px 0 0;
+
 }
 .breadcrumb-area .title {
     position: relative;
     display: block;
     padding-top: 24px;
     padding-bottom: 47px;
+    top: -200px ;
+
+
 }
-.breadcrumb-area .title:before{
+/* .breadcrumb-area .title:before{
     position: absolute;
     top: 0;
     left: 0;
@@ -6913,7 +6925,7 @@ box-shadow: 0px -4px 10px 3px #e8e8e8;
     height: 4px;
     background: #ffffff;
     content: "";
-}
+} */
 .breadcrumb-area .title h1{
     color: #ffffff;
     font-size: 48px;

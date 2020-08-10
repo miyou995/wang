@@ -729,7 +729,7 @@ li .single-footer-contact-info .text p br{
     padding-right: 0;
     margin-right: 0;
     float: none;
-    display: block;
+    /* display: block; */
     margin-bottom: 25px;
 }
 .header-contact-info li:last-child{

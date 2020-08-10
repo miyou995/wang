@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
-    <link rel="icon" type="image/png" href="{% static 'images/favicon/favicon-32x32.png' %}" sizes="32x32">
-    <link rel="icon" type="image/png" href="{% static 'images/favicon/favicon-16x16.png' %}" sizes="16x16">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}" sizes="32x32">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}" sizes="16x16">
 
     <!-- Fixing Internet Explorer-->
     <!--[if lt IE 9]>
@@ -37,7 +37,7 @@
         <div class="preloader"></div>
 
         <!-- Start Top Bar style1 -->
-        <section class="top-bar-style1">
+        <!-- <section class="top-bar-style1">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- End Top Bar style1 -->
 
         <!--Start Main Header-->
@@ -60,7 +60,7 @@
                             <div class="inner-container clearfix">
                                 <div class="logo-box-style1 float-left">
                                     <a href="{% url 'index' %}">
-                                        <img src="{% static 'images/resources/logo.png' %}" alt="Awesome Logo">
+                                        <img src="{% static 'images/logo.png' %}" alt="Awesome Logo">
                                     </a>
                                 </div>
                                 <div class="main-menu-box float-right">
@@ -74,7 +74,6 @@
                                         </div>
                                         <div class="navbar-collapse collapse clearfix">
                                             <ul class="navigation clearfix">
-                                                <li class="dropdown current"><a href="{% url 'index' %}">Home</a></li>
                                                 <li class="dropdown"><a href="{% url 'about' %}">About Us</a>
                                                 </li>
                                                 <li class="dropdown "><a href="{% url 'products' %}">Produits</a>
@@ -114,8 +113,8 @@
 
             <div class="header-lower-style1">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
+                    <div class="row justify-content-center">
+                        <div class="col-">
                             <div class="inner-content clearfix">
                                 <ul class="header-contact-info float-left">
                                     <li>
@@ -137,8 +136,8 @@
                                                 <span class="icon-phone"></span>
                                             </div>
                                             <div class="text">
-                                                <h3>+324 123 45 978</h3>
-                                                <p>Mon - Friday: 9.00 to 18.00</p>
+                                                <h3>0550 155 155</h3>
+                                                <p> Dimande - Jeudi: 9h00 à 17h00</p>
                                             </div>
                                         </div>
                                     </li>
@@ -173,7 +172,7 @@
             <div class="container">
                 <div class="row">
                     <!--Start single footer widget-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                         <div class="single-footer-widget marbtm50">
                             <div class="contact-info-box">
                                 <div class="footer-logo">
@@ -182,17 +181,17 @@
                                     </a>
                                 </div>
                                 <ul>
-                                    <li>
+                                    <!-- <li>
                                         <h6>Address</h6>
                                         <p>Flat 20, Reynolds Neck, North<br> Helenaville, FV77 8WS</p>
-                                    </li>
+                                    </li> -->
                                     <li>
-                                        <h6>Phone</h6>
-                                        <p>+324 123 45 978 & 01<br> <span>Mon - Friday:</span> 9.00am to 6.00pm</p>
+                                        <h6>Téléphone</h6>
+                                        <p>0550 155 155<br> <span>Dimande - Jeudi:</span> 9h00 à 17h00</p>
                                     </li>
                                     <li>
                                         <h6>Email</h6>
-                                        <p>abc@yourdomain.com<br> crystalocareer@gmail.com</p>
+                                        <p>email@yourdomain.com<br> deuxieme_email@gmail.com</p>
                                     </li>
                                 </ul>
                             </div>
@@ -200,121 +199,45 @@
                     </div>
                     <!--End single footer widget-->
                     <!--Start single footer widget-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                         <div class="single-footer-widget marbtm50">
                             <div class="title">
-                                <h3>Services</h3>
+                                <h3>Liens Rapides</h3>
                             </div>
                             <div class="services-links">
                                 <ul>
-                                    <li><a href="#">Concept Design</a></li>
-                                    <li><a href="#">Project Designs</a></li>
-                                    <li><a href="#">Make Overs</a></li>
+                                    <li><a href="#">Accueil</a></li>
+                                    <li><a href="#">A propos</a></li>
+                                    <!-- <li><a href="#">Make Overs</a></li>
                                     <li><a href="#">Consulting</a></li>
                                     <li><a href="#">Glass & Wrought</a></li>
-                                    <li><a href="#">Space Planning</a></li>
+                                    <li><a href="#">Space Planning</a></li> -->
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <!--End single footer widget-->
-                    <!--Start single footer widget-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                        <div class="single-footer-widget pdbtm50">
-                            <div class="title">
-                                <h3>Recent News</h3>
-                            </div>
-                            <ul class="recent-news">
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="{% static 'images/footer/recent-news-1.jpg' %}" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="project-single.html"><span class="icon-next"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <p>March 10, 2019</p>
-                                        <h5><a href="#">Creating drama and<br> feeling with...</a></h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="{% static 'images/footer/recent-news-2.jpg' %}" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="project-single.html"><span class="icon-next"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <p>March 02, 2019</p>
-                                        <h5><a href="#">Wondering if interior<br> design is dying...</a></h5>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="img-holder">
-                                        <img src="{% static 'images/footer/recent-news-3.jpg' %}" alt="Awesome Image">
-                                        <div class="overlay-style-one">
-                                            <div class="box">
-                                                <div class="content">
-                                                    <a href="project-single.html"><span class="icon-next"></span></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="title-holder">
-                                        <p>February 27, 2019</p>
-                                        <h5><a href="#">Enjoy monsoon in<br> comfort of your...</a></h5>
-                                    </div>
-                                </li>
 
-                            </ul>
-                        </div>
-                    </div>
-                    <!--End single footer widget-->
                     <!--Start single footer widget-->
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                         <div class="single-footer-widget">
                             <div class="brochures-carousel-box owl-carousel owl-theme">
                                 <!--Start Single Item-->
-                                <div class="single-item">
-                                    <div class="img-holder">
-                                        <img src="{% static 'images/footer/brochures-1.jpg' %}" alt="Awesome Image">
-                                    </div>
-                                    <div class="title-holder">
-                                        <h3>Our Interior Design<br> Brochure</h3>
-                                        <a class="btn-two" href="#">Download Now<span class="flaticon-next"></span></a>
-                                    </div>
-                                </div>
-                                <!--End Single Item-->
-                                <!--Start Single Item-->
-                                <div class="single-item">
-                                    <div class="img-holder">
-                                        <img src="{% static 'images/footer/brochures-1.jpg' %}" alt="Awesome Image">
-                                    </div>
-                                    <div class="title-holder">
-                                        <h3>Our Interior Design<br> Brochure</h3>
-                                        <a class="btn-two" href="#">Download Now<span class="flaticon-next"></span></a>
-                                    </div>
-                                </div>
-                                <!--End Single Item-->
-                                <!--Start Single Item-->
-                                <div class="single-item">
-                                    <div class="img-holder">
-                                        <img src="{% static 'images/footer/brochures-1.jpg' %}" alt="Awesome Image">
-                                    </div>
-                                    <div class="title-holder">
-                                        <h3>Our Interior Design<br> Brochure</h3>
-                                        <a class="btn-two" href="#">Download Now<span class="flaticon-next"></span></a>
-                                    </div>
-                                </div>
-                                <!--End Single Item-->
+                                {% for prod in produits %}
+                                  {% if prod.page_accueil %}
+                                    
+                                  <div class="single-item">
+                                      <div class="img-holder">
+                                          <img src="{{prod.image.url}}" alt="Awesome Image">
+                                      </div>
+                                      <div class="title-holder">
+                                          <h3>{{prod.name}}</h3>
+                                      </div>
+                                  </div>
+                                  <!--End Single Item-->
+                                  {% endif %}
+                                {% endfor %}
+                               
                             </div>
                         </div>
                     </div>
@@ -382,6 +305,18 @@
     <script src="{% static 'js/validation.js' %}"></script>
     <script src="{% static 'js/wow.js' %}"></script>
 
+
+<!-- <script src="{% static 'js/extensions/revolution.extension.actions.min.js' %}"></script> -->
+<script src="{% static 'js/extensions/revolution.extension.carousel.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+<!-- <script src="{% static 'js/extensions/revolution.extension.layeranimation.min.js' %}"></script> -->
+<!-- <script src="{% static 'js/extensions/revolution.extension.migration.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.parallax.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.video.min.js' %}"></script> -->
+<script src="{% static 'js/html5lightbox.js' %}"></script>
+<script src="{% static 'js/timePicker.js' %}"></script>
     <!---
 <script src="js/gmaps.js"></script>
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyB2uu6KHbLc_y7fyAVA4dpqSVM4w9ZnnUw"></script>
@@ -392,7 +327,7 @@
 
     <!--Revolution Slider-->
 
-    <script src="{% static 'js/main-slider-script.js' %}"></script>
+    <!-- <script src="{% static 'js/main-slider-script.js' %}"></script> -->
 
     <!-- thm custom script -->
     <script src="{% static 'js/custom.js' %}"></script>
