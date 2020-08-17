@@ -13,11 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- For IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <!-- master stylesheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Responsive stylesheet -->
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}" sizes="32x32">
@@ -76,14 +76,14 @@
                                             <ul class="navigation clearfix">
                                                 <li class="dropdown"><a href="{% url 'about' %}">About Us</a>
                                                 </li>
-                                                <li class="dropdown "><a href="{% url 'products' %}">Produits</a>
+                                                <li class="dropdown "><a href="">Produits</a>
                                                     <ul class="row d-none d-lg-flex">
                                                         {% for icon in icons %}
                                                         <li class="bg-dark row col-6 ">
-                                                            <a class="m-3 d-block" href="{% url 'project-detail' %}">
+                                                            <a class="m-3 d-block" href="{% url 'products' slug=icon.slug %}">
                                                                 <img class="img-fluid" src="{{icon.icon.url}}" width="80" alt="{{icon.name}}" srcset="">
                                                             </a>
-                                                                <a class="text-white text-center col-5" href="{% url 'project-detail' %}">
+                                                                <a class="text-white text-center col-5" href="{% url 'products' slug=icon.slug %}">
                                                                     {{icon.name}}
                                                                 </a>
                                                             </li>
@@ -118,7 +118,7 @@
                             <div class="inner-content clearfix">
                                 <ul class="header-contact-info float-left">
                                     <li>
-                                        <ul class="header-social-links-style1 float-right">
+                                        <ul class="header-social-links-style1 float-right d-flex">
                                             <li class="wow slideInUp" data-wow-delay="0ms" data-wow-duration="1200ms">
                                                 <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                                             </li>
@@ -136,7 +136,7 @@
                                                 <span class="icon-phone"></span>
                                             </div>
                                             <div class="text">
-                                                <h3>0550 155 155</h3>
+                                                <h3>0550 109 228</h3>
                                                 <p> Dimande - Jeudi: 9h00 à 17h00</p>
                                             </div>
                                         </div>
@@ -148,12 +148,11 @@
                                             </div>
                                             <div class="text">
                                                 <h3>support@mailus.com</h3>
-                                                <p>Get a Free Quote</p>
+                                                <p>Obtenez un devis gratuit</p>
                                             </div>
                                         </div>
                                     </li>
                                 </ul>
-
                             </div>
                         </div>
                     </div>
@@ -315,8 +314,8 @@
 <script src="{% static 'js/extensions/revolution.extension.parallax.min.js' %}"></script>
 <script src="{% static 'js/extensions/revolution.extension.slideanims.min.js' %}"></script>
 <script src="{% static 'js/extensions/revolution.extension.video.min.js' %}"></script> -->
-<script src="{% static 'js/html5lightbox.js' %}"></script>
-<script src="{% static 'js/timePicker.js' %}"></script>
+<script src="{% static 'js/lightbox.min.js' %}"></script>
+<!-- <script src="{% static 'js/timePicker.js' %}"></script> -->
     <!---
 <script src="js/gmaps.js"></script>
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyB2uu6KHbLc_y7fyAVA4dpqSVM4w9ZnnUw"></script>

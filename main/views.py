@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic.base import TemplateView
+from django.views.generic import DetailView, ListView
+
 from .models import Categorie, Produit, Reference
 # Create your views here.
 
@@ -22,16 +24,31 @@ class AboutView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["icons"] = Categorie.objects.all()
+        context["produits"] = Produit.objects.all()
+
         return context
 
 
-class ProductsView(TemplateView):
+class ProductsView(ListView):
     template_name = "Products.html"
+    model = Produit
+    context_object_name = "categorie"
+
+    def get_queryset(self):
+        self.categorie = get_object_or_404(Categorie, slug=self.kwargs['slug'])
+        return self.categorie
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["icons"] = Categorie.objects.all()
+        context["categorie"] = self.categorie
+        context["produits"] = Produit.objects.all()
+
+        context['produitsF'] = Produit.objects.filter(categorie=self.categorie)
         return context
+
+
 
 
 class ProjectView(TemplateView):
@@ -40,15 +57,21 @@ class ProjectView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["icons"] = Categorie.objects.all()
+        context["produits"] = Produit.objects.all()
+
         return context
 
 
-class ProjectDetailView(TemplateView):
-    template_name = "project-single.html"
+class ProjectDetailView(DetailView):
+    template_name = "produit_detail.html"
+    context_object_name = 'produit'
+    model = Produit
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["icons"] = Categorie.objects.all()
+        context["produits"] = Produit.objects.all()
+
         return context
 
         
@@ -58,6 +81,8 @@ class ProjectV2View(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["icons"] = Categorie.objects.all()
+        context["produits"] = Produit.objects.all()
+
         return context
 
         
@@ -66,6 +91,7 @@ class ShopView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context["produits"] = Produit.objects.all()
         context["icons"] = Categorie.objects.all()
         return context
 
@@ -75,6 +101,7 @@ class ShopDetailView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context["produits"] = Produit.objects.all()
         context["icons"] = Categorie.objects.all()
         return context
 
@@ -84,6 +111,7 @@ class BlogView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context["produits"] = Produit.objects.all()
         context["icons"] = Categorie.objects.all()
         return context
 
@@ -93,5 +121,6 @@ class BlogDetailView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context["produits"] = Produit.objects.all()
         context["icons"] = Categorie.objects.all()
         return context

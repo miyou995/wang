@@ -18,6 +18,7 @@ class CategorieAdmin(CategorieAdmin):
     list_filter = ('id', 'name', 'categorie',)
     list_editable = ['actif','page_accueil']
 
+
 @admin.register(Reference)
 class ReferenceAdmin(admin.ModelAdmin):
     list_display = ('id', 'name')

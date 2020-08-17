@@ -88,6 +88,7 @@ body {
     line-height: 25px;
     font-weight: 400;
     font-family: 'Rubik', sans-serif;
+    overflow-x: hidden;
 }
 button:focus{
     outline: none;
@@ -145,9 +146,12 @@ i {
 }
 ul,
 li {
-    list-style: none;
+    /* list-style: none; */
     margin: 0;
     padding: 0;
+}
+.about-list{
+    list-style: circle!important;
 }
 ol,
 li{
@@ -3138,8 +3142,8 @@ select:focus {
     right: 0;
     background-repeat: no-repeat;
     background-position: top right;
-    height: 695px;
-    width: 695px;
+    height: 100%;
+    width: 100%;
     background-image: url(../images/footer/footer-shape.png);
     z-index: -1;
 
@@ -6889,10 +6893,10 @@ box-shadow: 0px -4px 10px 3px #e8e8e8;
 =============================================
     Breadcrumb area style
 =============================================
-***/
+***/    
 
 .breadcrumb-area {
-background-image: url('/static/images/slides/index-banner.jpg');
+
     position: relative;
     background-attachment: scroll;
     background-position: center top;
@@ -6900,6 +6904,15 @@ background-image: url('/static/images/slides/index-banner.jpg');
     background-size: cover;
     padding: 0px 0 0px;
     z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
 }
 
 .breadcrumb-area .inner-content {
@@ -7039,7 +7052,7 @@ background-image: url('/static/images/slides/index-banner.jpg');
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 580px;
+    height: 95%;
     background: #f6f6f6;
     content: "";
     z-index: -1;
@@ -9137,7 +9150,6 @@ li .single-footer-contact-info .text p span{
 .project-info-content{
     position: relative;
     display: block;
-    max-width: 370px;
     width: 100%;
     margin: -6px auto 0;
     z-index: 3;

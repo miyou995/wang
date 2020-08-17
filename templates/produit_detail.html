@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+    
+{% block content %}
+        <!--End Main Header-->
+
+        <!--Start breadcrumb area-->
+        <section class="breadcrumb-area style2" style="background-image: url({{produit.image.url}});">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content-box clearfix">
+                            <div class="title-s2 text-center">
+                                <h1>{{produit.name}}</h1>
+                            </div>
+                            <div class="breadcrumb-menu float-left">
+                                <ul class="clearfix">
+                                    <li><a href="index-2.html">Home</a></li>
+                                    <li><a href="project.html">Projects</a></li>
+                                    <li class="active">Single Project</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End breadcrumb area-->
+
+        <!--Start Project Description area-->
+        <section class="project-description-area">
+            <div class="pattern-bg wow slideInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <img src="{% static 'images/pattern/project-description-pattern.jpg' %}" alt="Pattern Bg">
+            </div>
+            <div class="container">
+                <div class="row">
+                    {% if produit.image2 %}
+                    <div class="col-xl-5">
+                        <a class="wow zoomIn" data-lightbox="image-{{produit.pk}}" data-wow-delay="300ms" data-wow-duration="1500ms"  href="{{produit.image2.url}}">
+                            <div class="project-description-image-box">
+                                <img src="{{produit.image2.url}}" alt="Awesome Image">
+                            </div>
+                        </a>
+                    </div>
+                    {% endif %}
+                    <div class="col-xl-7">
+                        <div class="project-description-content">
+                            <div class="sec-title">
+                                <p>Description</p>
+                                <div class="title">{{produit.name}}</div>
+                            </div>
+                            <div class="inner-content">
+                                <p>{{produit.definition|linebreaks}} </p>
+                                </div>
+                         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Project Description area-->
+
+        <!--Start Project Info Area-->
+        <section class="project-info-area">
+            <div class="pattern-bg wow slideInRight" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <img src="{% static 'images/pattern/project-info-patten.jpg' %}" alt="Pattern Bg">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="project-info-content">
+                            <div class="project-info-title">
+                                <h3>Caractristiques</h3>
+                            </div>
+                            <div>{{produit.content|safe}}</div>
+                            <!-- <div class="inner-content">
+                                <ul>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-maps-and-location1"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h4>Location</h4>
+                                            <span>New York United States</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-ruler"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h4>Square Meters</h4>
+                                            <span>452,65m<sup>2</sup></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-calendar"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h4>Project Year</h4>
+                                            <span>2018</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-price"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h4>Price Value</h4>
+                                            <span>$65m</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <span class="icon-group"></span>
+                                        </div>
+                                        <div class="title">
+                                            <h4>Project Head</h4>
+                                            <span>Mr. John Meckency</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-xl-6">
+                        {% if produit.image5 %}
+                            <a class="wow zoomIn" data-lightbox="image-{{produit.pk}}" data-wow-delay="300ms" data-wow-duration="1500ms"  href="{{produit.image5.url}}">
+                                <div class="project-info-image-box">
+                                    <img src="{{produit.image5.url}}" alt="Awesome Image">
+                                </div>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Project Info Area-->
+
+        <!--Start Video Image Holder Area-->
+        <section class="video-image-holder-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        {% if produit.image3 %}
+                        <a class="wow zoomIn" data-lightbox="image-{{produit.pk}}" data-wow-delay="300ms" data-wow-duration="1500ms"  href="{{produit.image3.url}}">
+                            <div class="single-project-image-gallery">
+                                <img src="{{produit.image3.url}}" alt="Awesome Image">
+                            </div>
+                        </a>
+                        {% endif %}
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        {% if produit.image4 %}
+                            <a class="wow zoomIn" data-lightbox="image-{{produit.pk}}" data-wow-delay="300ms" data-wow-duration="1500ms"  href="{{produit.image4.url}}">
+                                <div class="single-project-image-gallery">
+                                    <img src="{{produit.image4.url}}" alt="Awesome Image">
+                                </div>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End Video Image Gallery Area-->
+<section>
+    <div class="container-fluid m-5">
+        <div class="row justify-content-center">
+            <div class="m-5 col-12">
+                <center><h2 > Parametres</h2>
+            </div>
+            <div>
+                <a class="wow zoomIn" data-lightbox="fiche-{{produit.pk}}" data-wow-delay="300ms" data-wow-duration="1500ms"  href="{{produit.fiche.url}}">
+                    <img class="img-fluid" src="{{produit.fiche.url}}" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container">
+        <div class="row  justify-content-center">
+            <div class="row d-flex">
+                <div class="col- col-sm-6 col-md-4 row d-block p-4">
+                    <div class="col-4">
+                        <img class="img-fluid" src="{% static 'images/icon/inspection.svg' %}" alt="inspection" >
+                    </div>
+                    <h3 class="titre">Inspections de produits</h3>
+                    <p class="description">Nous fournirons des tests et des rapports gratuits.Si vous avez besoin d'un rapport de test tiers, veuillez en informer à l'avance et l'acheteur devra payer les frais correspondants.</p>
+                </div>
+                <div class="col- col-sm-6 col-md-4 row d-block p-4 ">
+                    <div class="col-4">
+                        <img class="img-fluid" src="{% static 'images/icon/box.svg' %}" alt="inspection" >
+                    </div>
+                    <h3 class="titre">Emballage</h3>
+                    <p class="description">Sauf indication contraire, notre société se conformera uniquement à ses normes d'emballage minimales pour le mode de transport choisi. Le coût de tout emballage spécial, chargement ou contreventement demandé par l'acheteur sera payé par l'acheteur.</p>
+                </div>
+                <div class="col- col-sm-6 col-md-4 row d-block p-4">
+                    <div class="col-4">
+                        <img class="img-fluid" src="{% static 'images/icon/boat.svg' %}" alt="inspection" >
+                    </div>
+                    <h3 class="titre">Transport</h3>
+                    <p class="description">Nous avons une équipe de transport professionnelle et efficace. Transport au port spécifié par le client et expédition à temps. Sauf indication contraire, notre société utilisera son jugement pour déterminer le transporteur et l'itinéraire.</p>
+                </div>
+                <div class="col- col-sm-6 col-md-4 row d-block p-4">
+                    <div class="col-4 ">
+                        <img class="img-fluid" src="{% static 'images/icon/tools.svg' %}" alt="inspection" >
+                    </div>
+                    <h3 class="titre">Installation</h3>
+                    <p class="description">Fournir des fichiers d'installation, des données techniques, des vidéos, des dessins, etc. Avoir une équipe professionnelle d'ingénieurs, d'ingénieurs disponibles pour entretenir les machines à l'étranger./p>
+                </div>
+                <div class="col- col-sm-6 col-md-4 row d-block p-4 ">
+                    <div class="col-4">
+                        <img class="img-fluid" src="{% static 'images/icon/customer-service.svg' %}" alt="inspection" >
+                    </div>
+                    <h3 class="titre">Services après-vente
+                    </h3>
+                    <p class="description">Garantir que la machine pourrait répondre aux normes techniques de production et aux exigences de performance indiquées dans le contrat. Pièces de rechange riches et équipe de maintenance professionnelle, équipe de support technique pour communiquer à temps.</p>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+        {% endblock content %}
