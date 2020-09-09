@@ -11,7 +11,10 @@
                         <div class="col-xl-12">
                             <div class="inner-content clearfix">
                                 <div class="title">
-                                    <h1 class="home_page">Pons roulants</h1>
+                                    {% comment %}
+                                    <h1 class="home_page">WEIHUA Algérie fabriquant de pons roulants</h1> 
+                                      
+                                    {% endcomment %}
                                 </div>
                             </div>
                         </div>
@@ -37,7 +40,7 @@
                                     <h3>Professionnel</h3>
                                     <p>Le plus adapté à votre programme.</p>
                                 </div>
-                                <a class="btn-one" href="#">Voir plus<span class="flaticon-next"></span></a>
+                                <a class="btn-one" href="{% url 'about' %}">Voir plus<span class="flaticon-next"></span></a>
                             </div>
                         </div>
                     </div>
@@ -54,7 +57,7 @@
                                     <h3>Puissant</h3>
                                     <p>Équipement de production à grande échelle</p>
                                 </div>
-                                <a class="btn-one" href="#">Voir plus<span class="flaticon-next"></span></a>
+                                <a class="btn-one" href="{% url 'about' %}">Voir plus<span class="flaticon-next"></span></a>
                             </div>
                         </div>
                     </div>
@@ -71,7 +74,7 @@
             <div class="container">
                 <div class="sec-title with-text max-width text-center wow fadeInDown" data-wow-delay="100ms" data-wow-duration="1200ms">
                     <p>Espace de travail</p>
-                    <div class="title clr-white">Jetez un œil aux produits que<span> nous proposons </span></div>
+                    <div class="title text-white"> <h1 class="text-white">WEIHUA Algérie fabriquant de pons roulants </h1> </span></div>
                     <p class="bottom-text">Weihua Group a plus de 30 ans d'expérience dans l'industrie de la fabrication de machines comme l'une des activités, y compris les grues industrielles, les machines minières, machines portuaires, grues mobiles, boîte de vitesses, etc.</p>
                 </div>
                 <div class="row">
@@ -79,27 +82,27 @@
                     
                     {% for prod in produits %}
                         {% if prod.page_accueil %}
-                        {% if prod.actif %}
-                            <div class="col-xl-4 col-lg-4">
-                                <div class="single-working-box wow fadeInDown" data-wow-delay="0ms">
-                                    <div class="img-holder">
-                                        <div class="inner">
-                                            <img src="{{prod.image.url}}" alt="{{prod.name}}">
-                                            <div class="overlay-style-one"></div>
+                            {% if prod.actif %}
+                                <div class="col-xl-4 col-lg-4">
+                                    <div class="single-working-box wow fadeInDown" data-wow-delay="0ms">
+                                        <div class="img-holder">
+                                            <div class="inner">
+                                                <img src="{{prod.image.url}}" alt="{{prod.name}}">
+                                                <div class="overlay-style-one"></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="text-holder">
-                                        <div class="plus-icon-box"><span class="icon-plus"></span></div>
-                                        <div class="outer-box">
-                                            <div class="text">
-                                                <h3>{{prod.name}}</h3>
-                                                <p>{{prod.definition|truncatewords:10}}</p>
+                                        <div class="text-holder">
+                                            <div class="plus-icon-box"><span class="icon-plus"></span></div>
+                                            <div class="outer-box">
+                                                <div class="text">
+                                                    <h3>{{prod.name}}</h3>
+                                                    <p>{{prod.definition|truncatewords:10}}</p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        {% endif %}
+                            {% endif %}
                         {% endif %}
                     {% endfor %}
 

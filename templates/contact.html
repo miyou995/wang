@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+    
+{% block content %}
+        <!--Start breadcrumb area-->
+        <section class="breadcrumb-area" style="background-image: url({% static 'images/resources/breadcrumb-bg.jpg' %});">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content clearfix">
+                            <div class="title">
+                                <h1>Titre pour la page a propos</h1>
+                            </div>
+                            <div class="breadcrumb-menu float-right">
+                                <ul class="clearfix">
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li class="active">Contact</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End breadcrumb area-->
+        <section class="contact-form-section"  style="background-image:url({% static 'images/resources/contact.png' %})!important;" >
+            <div class="auto-container">
+                <!-- Sec Title -->
+                <div class="sec-title">
+                    <h2>Entrer en contact</h2>
+                     {% comment %}
+                     <div class="text"> 
+                        Besoin de vous organiser ? 
+                        ou d'optimiser votre espace ? <br>
+                        faites appel à SAYMETAL, <br> 
+                        <strong>une efficacité reconnue. </strong>
+                    </div>
+                     {% endcomment %}
+                </div>
+                
+                {% include "_messages.html" %}
+                <div class="row clearfix">
+                    <!-- Form Column -->
+                    <div class="form-column col-lg-7 col-md-12 col-sm-12">
+                        <div class="inner-column">
+                            
+                            <!-- Contact Form -->
+                            <div class="contact-form"> 
+                                    
+                                <!--Contact Form-->
+                                <form class="formulaire" method="post" action="{% url 'contact' %}"  id="contact-form">
+                                    {% csrf_token %}
+                                    <div class="row clearfix">
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <input type="text" name="name" placeholder="Votre nom" required>
+                                        </div>
+                                        
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <input type="text" name="email" placeholder="Email" required>
+                                        </div>
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                            <input type="text" name="phone" placeholder="Numéro de téléphone" required>
+                                        </div>
+                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                            <input type="text" name="subject" placeholder="Sujet" required>
+                                        </div>
+                                        
+                                        
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <textarea name="message" placeholder="Message"></textarea>
+                                        </div>
+                                        
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">Envoyer</span></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Info Column -->
+                    <div class="info-column col-lg-5 col-md-12 col-sm-12">
+                        <div class="inner-column">
+    
+                            <!-- Contact Info List -->
+                            <ul class="contact-info-list">
+                                <li><strong>Addresse :</strong><br>Cité nadjah N°02 alger alger</li>
+                            </ul>
+                            <!-- Contact Info List -->
+                            <ul class="contact-info-list">
+                                <li><strong>Téléphone : </strong><a href="tel: 0550 109 228 ">0550 109 228 </a></li>
+                                <li><strong>Email : </strong><a href="mailto:info@stellaorre.com">contact@weihua-dz.com</a></li>
+                            </ul>
+                            <!-- Contact Info List -->
+                            <ul class="contact-info-list">
+                                <li><strong>heures d'ouverture :</strong><br>8:00 h – 17:00 h <br> Dimanche – Jeudi</li>
+                            </ul>
+                    
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </section>
+        <!-- End Contact Form Section -->
+        
+        <!-- Map Section -->
+        <section class="map-section">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3209.113500187639!2d2.736405115564222!3d36.45481328002119!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128f0961bf75eb9d%3A0x8cc63fa1a19ab7b2!2sSay%20Metal%20Rayonnage!5e0!3m2!1sfr!2sdz!4v1577698226207!5m2!1sfr!2sdz"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </section>
+        <!-- End Map Section -->
+{% endblock content %}

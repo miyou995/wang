@@ -14,13 +14,13 @@
                             <div class="title-s2 text-center">
                                 <h1>{{produit.name}}</h1>
                             </div>
-                            <div class="breadcrumb-menu float-left">
+                            <!-- <div class="breadcrumb-menu float-left">
                                 <ul class="clearfix">
                                     <li><a href="index-2.html">Home</a></li>
                                     <li><a href="project.html">Projects</a></li>
                                     <li class="active">Single Project</li>
                                 </ul>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -47,13 +47,12 @@
                     <div class="col-xl-7">
                         <div class="project-description-content">
                             <div class="sec-title">
-                                <p>Description</p>
+                                <p>Introduction</p>
                                 <div class="title">{{produit.name}}</div>
                             </div>
                             <div class="inner-content">
-                                <p>{{produit.definition|linebreaks}} </p>
+                                <p>{{produit.definition|linebreaksbr}} </p>
                                 </div>
-                         
                             </div>
                         </div>
                     </div>
@@ -72,58 +71,9 @@
                     <div class="col-xl-6">
                         <div class="project-info-content">
                             <div class="project-info-title">
-                                <h3>Caractristiques</h3>
+                                <h3>Description</h3>
                             </div>
-                            <div>{{produit.content|safe}}</div>
-                            <!-- <div class="inner-content">
-                                <ul>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-maps-and-location1"></span>
-                                        </div>
-                                        <div class="title">
-                                            <h4>Location</h4>
-                                            <span>New York United States</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-ruler"></span>
-                                        </div>
-                                        <div class="title">
-                                            <h4>Square Meters</h4>
-                                            <span>452,65m<sup>2</sup></span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-calendar"></span>
-                                        </div>
-                                        <div class="title">
-                                            <h4>Project Year</h4>
-                                            <span>2018</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-price"></span>
-                                        </div>
-                                        <div class="title">
-                                            <h4>Price Value</h4>
-                                            <span>$65m</span>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="icon">
-                                            <span class="icon-group"></span>
-                                        </div>
-                                        <div class="title">
-                                            <h4>Project Head</h4>
-                                            <span>Mr. John Meckency</span>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div> -->
+                            <div class="">{{produit.presentation}}</div>
                         </div>
                     </div>
                     <div class="col-xl-6">
@@ -139,7 +89,20 @@
             </div>
         </section>
         <!--End Project Info Area-->
-
+        <section>
+            <div class="container m-5">
+                <div class="row d-block">
+                    <div type="button" data-toggle="collapse" data-target="#car" class="m-0 py-3 px-5 d-flex justify-content-between">
+                        <h2>Caractristiques</h2>
+                        <div class=""><img src="{% static 'images/icon/plus.svg' %}" width="20" alt="" srcset=""></div>
+                    </div>
+                    <hr class="trait m-0">
+                <div class="collapse" id="car">
+                    {{produit.content|safe|linebreaksbr}}
+                </div>
+                </div>
+            </div>
+        </section>
         <!--Start Video Image Holder Area-->
         <section class="video-image-holder-area">
             <div class="container-fluid">
@@ -170,13 +133,29 @@
     <div class="container-fluid m-5">
         <div class="row justify-content-center">
             <div class="m-5 col-12">
-                <center><h2 > Parametres</h2>
+                <center><h2> Parametres </h2>
             </div>
+            {% if produit.fiche %}
+                <div>
+                    <a class="wow zoomIn" data-lightbox="fiche-{{produit.pk}}" data-wow-delay="300ms" data-wow-duration="1500ms"  href="{{produit.fiche.url}}">
+                        <img class="img-fluid" src="{{produit.fiche.url}}" alt="">
+                    </a>       
+                </div>
+            {% endif %}
+            {% if produit.fiche2 %}
             <div>
-                <a class="wow zoomIn" data-lightbox="fiche-{{produit.pk}}" data-wow-delay="300ms" data-wow-duration="1500ms"  href="{{produit.fiche.url}}">
-                    <img class="img-fluid" src="{{produit.fiche.url}}" alt="">
-                </a>
+                <a class="wow zoomIn" data-lightbox="fiche-{{produit.pk}}" data-wow-delay="300ms" data-wow-duration="1500ms"  href="{{produit.fiche2.url}}">
+                    <img class="img-fluid" src="{{produit.fiche2.url}}" alt="">
+                </a>       
             </div>
+        {% endif %}
+        {% if produit.fiche3 %}
+        <div>
+            <a class="wow zoomIn" data-lightbox="fiche-{{produit.pk}}" data-wow-delay="300ms" data-wow-duration="1500ms"  href="{{produit.fiche3.url}}">
+                <img class="img-fluid" src="{{produit.fich3e.url}}" alt="">
+            </a>       
+        </div>
+    {% endif %}
         </div>
     </div>
 </section>

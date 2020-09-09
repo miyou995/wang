@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+    
+{% block content %}
+        <!--Start breadcrumb area-->
+        <section class="breadcrumb-area style2" style="background-image: url({% static 'images/slides/faqBanner.jpg' %});">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="inner-content-box clearfix">
+                            <div class="title-s2 text-center">
+                                <span>QUestions des clients</span>
+                                <h1>Trouver vos réponses</h1>
+                            </div>
+                            <div class="breadcrumb-menu float-left">
+                                <ul class="clearfix">
+                                    <li><a href="{% static 'index' %}">Accueil</a></li>
+                                    <li class="active">FAQ</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End breadcrumb area-->
+
+        <!--Start faq area-->
+        <section class="faq-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="faq-content-box">
+                            <div class="accordion-box">
+                                <!--Start single accordion box-->
+                                <div class="project-info-content">
+                                    <div class="project-info-title">
+                                        <h3>A propos des produits</h3>
+                                    </div>
+                                </div>
+                                {% for q in q1 %}
+                                    <div class="accordion accordion-block">
+                                        <div class="accord-btn">
+                                            <h4>{{q.question}}</h4>
+                                        </div>
+                                        <div class="accord-content">
+                                            <p class="h6 text-dark">{{q.reponse}}</p> <br>
+                                            <div>
+                                                {{q.content|safe}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End single accordion box-->
+                                {% endfor %}
+                              
+                                <div class="project-info-content">
+                                    <div class="project-info-title">
+                                        <h3>Service après-vente</h3>
+                                    </div>
+                                </div>
+                                {% for q in q2 %}
+                                    <div class="accordion accordion-block">
+                                        <div class="accord-btn">
+                                            <h4>{{q.question}}</h4>
+                                        </div>
+                                        <div class="accord-content">
+                                            <p class="h6 text-dark">{{q.reponse}}</p> <br>
+                                            <div>
+                                                {{q.content|safe}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End single accordion box-->
+                                {% endfor %}
+
+                                <div class="project-info-content">
+                                    <div class="project-info-title">
+                                        <h3>A propos de l'usine - visite</h3>
+                                    </div>
+                                </div>
+                                {% for q in q3 %}
+                                    <div class="accordion accordion-block">
+                                        <div class="accord-btn">
+                                            <h4>{{q.question}}</h4>
+                                        </div>
+                                        <div class="accord-content">
+                                            <p class="h6 text-dark">{{q.reponse}}</p> <br>
+                                            <div>
+                                                {{q.content|safe}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--End single accordion box-->
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End faq area-->
+        {% endblock content %}
