@@ -53,6 +53,7 @@
         <!--Start Main Header-->
         <header class="main-header header-style1">
 
+
             <div class="header-upper-style1">
                 <div class="container">
                     <div class="row">
@@ -74,17 +75,24 @@
                                         </div>
                                         <div class="navbar-collapse collapse clearfix">
                                             <ul class="navigation clearfix">
-                                                <li class="dropdown"><a href="{% url 'about' %}">About Us</a>
-                                                </li>
-                                                <li class="dropdown "><a style="cursor: pointer;">Produits</a>
+                                                <li><a href="{% url 'about' %}">About Us</a></li>
+                                                <li class="dropdown"><a style="cursor: pointer;">Produits</a>
                                                     <ul class="row d-none d-lg-flex">
                                                         {% for icon in icons %}
-                                                            <li class="bg-dark row col-6 ">
+                                                            <li class="bg-dark row col-lg-6 ">
                                                                 <a class="m-3 d-block" href="{% url 'products' slug=icon.slug %}">
-                                                                    <img class="img-fluid" src="{{icon.icon.url}}" width="80" alt="{{icon.name}}" srcset="">
+                                                                    <img class="img-fluid d-none d-lg-flex" src="{{icon.icon.url}}" width="80" alt="{{icon.name}}" srcset="">
                                                                 </a>
-                                                                
-                                                                <a class="text-white text-center col-5" href="{% url 'products' slug=icon.slug %}">
+                                                                <a class="text-white text-center col-lg-5" href="{% url 'products' slug=icon.slug %}">
+                                                                    {{icon.name}}
+                                                                </a>
+                                                            </li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                    <ul class="d-lg-none">
+                                                        {% for icon in icons %}
+                                                            <li class="bg-dark row col- col-lg-6">
+                                                                <a class="text-white text-center col- col-lg-5" href="{% url 'products' slug=icon.slug %}">
                                                                     {{icon.name}}
                                                                 </a>
                                                             </li>
@@ -92,10 +100,7 @@
                                                     </ul>
                                                 </li>
                                                 
-                                                <li class="dropdown"><a href="{% url 'faq' %}">FAQ</a>
-                                                   
-                                                </li>
-                                               
+                                                <li><a href="{% url 'faq' %}">FAQ</a></li>                                
                                                 <li><a href="{% url 'contact' %}">Contact</a></li>
                                             </ul>
                                         </div>
@@ -106,7 +111,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="header-lower-style1">
                 <div class="container">
                     <div class="row justify-content-center">

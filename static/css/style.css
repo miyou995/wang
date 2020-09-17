@@ -1041,7 +1041,7 @@ select:focus {
 .main-menu .navigation > li > ul {
     position: absolute;
     margin-left: -180px;
-    left: 0px;
+    left: -130px;
     top: 130%;
     /* width: 270px; */
     width: 600px;
